@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="media border p-3">
+            <div class="media-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img class="rounded-circle" src="{{ user_image }}" height="125" width="125">
+                    </div>
+                    <div class="col-md-6">
+                        <h3>{{ current_user.username }} Profile
+                            <small class="text-muted">
+                                <a class="ml-4" href="{{ url_for('editprofile') }}">Edit</a>
+                            </small>
+                        </h3>
+                        <p class="text-md-left"><b>First Name:</b> {{ current_user.firstname }}</p>
+                        <p class="text-md-left"><b>Last Name:</b> {{ current_user.lastname}}</p>
+                        <p class="text-md-left"><b>Email:</b> {{ current_user.email }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
